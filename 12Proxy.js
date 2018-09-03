@@ -7,7 +7,7 @@ let obj1 = {
 let handler1 = {
     get:function (target,property) {
         if (property == 'b') {
-            return 'hadesnow'
+            return 'someone'
         }
     }
 }
@@ -23,7 +23,7 @@ console.log(obj1.proxy.b);
 
 // get方法
 let person = {
-    name:'hadesnow'
+    name:'someone'
 }
 
 let proxy2 = new Proxy(person,{

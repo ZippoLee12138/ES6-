@@ -132,7 +132,7 @@ const objA = {
 
 const objB = {
     address:'beijing',
-    name:'hadesnow',
+    name:'someone',
 }
 
 const objC  = {}

@@ -12,13 +12,13 @@ const o = {
 console.log(o.method());
 
 let birth = '1991/12/11'
-const hadesnow = {
-    name:'hadesnow',
+const someone = {
+    name:'someone',
     birth,
     hello(){console.log(`我的名字是${this.name}`);}
 }
 
-hadesnow.hello()
+someone.hello()
 
 function getPoint() {
     const x = 1
@@ -51,7 +51,7 @@ obj2.hello()
 
 const person ={
     sayName(){
-        console.log('hello!hadesnow!');
+        console.log('hello!someone!');
     }
 }
 
