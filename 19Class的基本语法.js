@@ -120,3 +120,53 @@ class Widget2 {
 }
 
 console.log(Widget2.name);
+
+
+
+
+
+// Class的静态方法
+// 静态方法可以被继承
+class Foo2{
+    static  bbbb() {
+        console.log('static method');
+    }
+
+    constructor(x,y){
+        this.x = x
+        this.y = y
+    }
+}
+
+class Foo3 extends Foo2{
+    static bbb3(){
+        super.bbbb()
+        console.log('Foo3 static method');
+        
+    }
+}
+
+Foo3.bbb3()
+
+
+
+
+// new.target
+
+class Shape{
+    constructor(){
+        if (new.target == Shape) {
+            throw new Error('本类不可以被实例化')
+        }
+    }
+}
+
+class Reactangle extends Shape {
+    constructor(){
+        super()
+    }
+}
+
+
+// new Shape()
+new Reactangle()
