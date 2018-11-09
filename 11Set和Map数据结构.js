@@ -40,3 +40,56 @@ console.log(s3);
 
 const a4 = Array.from(new Set([1,2,3,4,4,5,6]))
 console.log(a4);
+
+
+// 遍历操作
+
+let s4 = new Set([1,2,3,4,5,6,7])
+
+// keys()
+
+for (const item of s4.keys()) {
+    console.log(item);
+}
+
+// values()
+console.log('values()');
+
+for (const item of s4.values()) {
+    console.log(item);
+}
+
+// entries()
+
+console.log('entries()');
+
+for (const item of s4.entries()) {
+    console.log(item);
+    
+}
+
+
+// forEach()
+
+s4.forEach((value, key) => {console.log(key + ':' + value);})
+
+
+// 因此使用 Set 可以很容易地实现并集（ Union）、 交集（ Intersect） 和差集（ Difference）。
+
+let set5 = new Set([1,2,3]),set6 = new Set([3,4,5])
+
+// 并集
+let setUnion = new Set([...set5,...set6])
+console.log('并集');
+console.log(setUnion);
+
+// 交集
+let setIntersect = new Set([...set5].filter(item => set6.has(item)))
+console.log('交集');
+console.log(setIntersect);
+
+// 差集
+let setDifference = new Set([...set5].filter(item => !set6.has(item)))
+console.log('差集');
+console.log(setDifference);
+
