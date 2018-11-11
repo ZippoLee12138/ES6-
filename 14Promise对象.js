@@ -137,57 +137,84 @@
 
 
 // 8 Promise.resolve()
-console.log('Promise.resolve()\n-------------------------------------------------------');
+// console.log('Promise.resolve()\n-------------------------------------------------------');
 
-// （2）参数是一个thenable对象
+// // （2）参数是一个thenable对象
 
+
+// setTimeout(() => {
+//     console.log('next event loop');
+    
+// }, 0);
+
+// let thenable = {
+//     then:function (resolve,reject) {
+//         resolve(42)
+//     }
+// }
+
+// let p5 = Promise.resolve(thenable)
+// p5.then(function (value) {
+//     console.log(value);
+    
+// })
+
+// const p7 = Promise.resolve()
+// p7.then(function () {
+//     console.log('p7');
+
+// })
+
+// console.log('middle event');
+
+
+// const p6 = Promise.resolve('Hello')
+// p6.then(function (s) {
+//     console.log(`p6 s :${s}`);
+    
+// })
+
+// // 9 Promise.reject()
+// const p = Promise.reject('出错了')
+// p.catch(function (error) {
+//     console.log(error);
+    
+// })
+
+// const  thenable2 = {
+//     then(resolve,reject){
+//         reject('出错了2')
+//     }
+// }
+
+// Promise.reject(thenable2).catch(function (err) {
+//     console.log(err === thenable2);
+    
+// })
+
+let a = 1
+
+let promise11 = new Promise(function (resolve,reject) {
+    
+    setTimeout(() => {
+        if (a == 1) {
+            resolve()
+        } else {
+            reject()
+        }
+    }, 100);
+
+})
 
 setTimeout(() => {
-    console.log('next event loop');
+    a = 2
+}, 10);
+
+promise11.then((result) => {
+    console.log(`sucess ${result}`);
     
-}, 0);
-
-let thenable = {
-    then:function (resolve,reject) {
-        resolve(42)
-    }
-}
-
-let p5 = Promise.resolve(thenable)
-p5.then(function (value) {
-    console.log(value);
+}).catch((err) => {
+    console.log(`err ${err}`);
     
-})
+});
 
-const p7 = Promise.resolve()
-p7.then(function () {
-    console.log('p7');
-
-})
-
-console.log('middle event');
-
-
-const p6 = Promise.resolve('Hello')
-p6.then(function (s) {
-    console.log(`p6 s :${s}`);
-    
-})
-
-// 9 Promise.reject()
-const p = Promise.reject('出错了')
-p.catch(function (error) {
-    console.log(error);
-    
-})
-
-const  thenable2 = {
-    then(resolve,reject){
-        reject('出错了2')
-    }
-}
-
-Promise.reject(thenable2).catch(function (err) {
-    console.log(err === thenable2);
-    
-})

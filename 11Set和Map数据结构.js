@@ -93,3 +93,57 @@ let setDifference = new Set([...set5].filter(item => !set6.has(item)))
 console.log('差集');
 console.log(setDifference);
 
+// Map
+let aKey = {
+    a:'aKey'
+}
+let map1 = new Map([
+    ['aaa',1],
+    [aKey,2]
+])
+
+console.log(map1);
+
+console.log(map1.has(aKey));
+console.log(map1.get(aKey));
+map1.delete(aKey)
+console.log(map1);
+map1.clear()
+console.log(map1);
+
+// 遍历操作
+let bKey = {
+    bKey:'bKey'
+}
+let map2 = new Map([
+    [bKey,'bbb'],
+    [33,'334']
+    ])
+
+// keys()     
+for (const item of map2.keys()) {
+    console.log(item);
+}
+
+// values()
+console.log('values()');
+
+for (const item of map2.values()) {
+    console.log(item);
+    
+}
+
+// entries()
+console.log('entries()');
+
+for (const item of map2.entries()) {
+    console.log(item);
+    
+}
+
+// forEach()
+
+map2.forEach((value,key) => {
+    console.log(key + ':' + value);
+    
+})
